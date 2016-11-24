@@ -21,5 +21,8 @@
    
     <!-- 定义依赖Bean -->
     <bean id="helloApi" class="cn.javass.spring.chapter2.helloworld.HelloImpl" scope="thread"/>
-   
+   <bean id="a" class="cn.javass.spring.chapter3.bean.SingleA">
+   	<property name="b" ref="b"></property>
+   </bean>
+    <bean id="b" class="cn.javass.spring.chapter3.bean.ProtoB" scope="prototype"></bean>
 </beans>

@@ -12,7 +12,7 @@
     <bean id="resourceBean" 
           class="cn.javass.spring.chapter3.bean.ResourceBean" 
           init-method="init" destroy-method="destroy" lazy-init="true">
-        <property name="file" value="D:/test.txt"/>      
+        <property name="file" value="D:/SOUFANG_TK_20161026000002.txt"/>      
     </bean>
 
     <bean id="dependentBean" 

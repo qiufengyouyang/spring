@@ -9,17 +9,20 @@
            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     
     <!-- 通过静态工厂参数索引方式依赖注入 -->
-	<bean id="byIndex" class="cn.javass.spring.chapter3.DependencyInjectByStaticFactory" factory-method="newInstance">
+	<bean id="byIndex" class="cn.javass.spring.chapter3.DependencyInjectByStaticFactory" 
+	factory-method="newInstance">
     	<constructor-arg index="0" value="Hello World!"/>
 	    <constructor-arg index="1" value="1"/>
 	</bean> 
 	<!-- 通过静态工厂参数类型方式依赖注入 -->
-	<bean id="byType" class="cn.javass.spring.chapter3.DependencyInjectByStaticFactory" factory-method="newInstance">
+	<bean id="byType" class="cn.javass.spring.chapter3.DependencyInjectByStaticFactory" 
+	factory-method="newInstance">
 	   <constructor-arg type="java.lang.String" value="Hello World!"/>
 	   <constructor-arg type="int" value="2"/>
 	</bean> 
 	<!-- 通过静态工厂参数名称方式依赖注入 -->
-	<bean id="byName" class="cn.javass.spring.chapter3.DependencyInjectByStaticFactory" factory-method="newInstance">
+	<bean id="byName" class="cn.javass.spring.chapter3.DependencyInjectByStaticFactory"
+	 factory-method="newInstance">
 	   <constructor-arg name="message" value="Hello World!"/>
 	   <constructor-arg name="index" value="3"/>
 	</bean> 

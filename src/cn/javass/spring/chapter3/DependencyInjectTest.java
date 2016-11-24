@@ -19,7 +19,7 @@ import cn.javass.spring.chapter3.bean.NavigationC;
 import cn.javass.spring.chapter3.bean.PropertiesTestBean;
 import cn.javass.spring.chapter3.bean.SetTestBean;
 
-
+//依赖注入的 测试
 public class DependencyInjectTest {
     
     @Test
@@ -36,7 +36,10 @@ public class DependencyInjectTest {
         byType.sayHello();
 
         //获取根据参数名字依赖注入的Bean
-        HelloApi byName = beanFactory.getBean("byName", HelloApi.class);
+        /**
+         * ，因为我们使用了通过构造器参数名字注入方式，请确保编译时class文件包含“变量信息”，
+         */
+       HelloApi byName = (HelloApi) beanFactory.getBean("byName");
         byName.sayHello();
         
     }
@@ -222,7 +225,8 @@ public class DependencyInjectTest {
         //初始化父容器
         ApplicationContext parentBeanContext = new ClassPathXmlApplicationContext("chapter3/parentBeanInject.xml");
         //初始化当前容器
-        ApplicationContext beanContext = new ClassPathXmlApplicationContext(new String[] {"chapter3/localBeanInject.xml"}, parentBeanContext);
+        ApplicationContext beanContext = new ClassPathXmlApplicationContext(
+                new String[] {"chapter3/localBeanInject.xml"}, parentBeanContext);
         //该Bean引用local bean
         HelloApi bean1 = beanContext.getBean("bean1", HelloApi.class);
         bean1.sayHello();

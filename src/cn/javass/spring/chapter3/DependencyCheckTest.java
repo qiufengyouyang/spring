@@ -10,6 +10,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DependencyCheckTest {
     
+    public void testDependsOn(){
+        
+    }
+    
     @Test(expected = UnsatisfiedDependencyException.class)
     public void testDependencyCheckByObject() throws IOException {
         //将抛出异常

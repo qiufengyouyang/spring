@@ -7,10 +7,17 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.javass.spring.chapter2.helloworld.HelloApi;
+import cn.javass.spring.chapter3.bean.SingleA;
 
 
 
 public class ThreadScopeTest {
+    @Test
+    public void testSingle(){
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("chapter3/threadScope.xml");
+        //SingleA a= (SingleA) beanFactory.getBean("a");
+        //SingleA a2= (SingleA) beanFactory.getBean("a");
+    }
     
     @Test
     public void testSingleThread() {
